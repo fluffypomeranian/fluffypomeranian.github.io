@@ -12,9 +12,12 @@ chmod 777 build.sh
 
 gem install bundler
 gem update --system
+
+
 bundle install
 bundle update
 
+# start docker desktop
 ./build.sh server
 
 open http://0.0.0.0:4000/
