@@ -10,8 +10,10 @@ Build the site with the following command
 ```
 chmod 777 build.sh
 
-sudo bundle install
-sudo bundle update
+gem install bundler
+gem update --system
+bundle install
+bundle update
 
 ./build.sh server
 
