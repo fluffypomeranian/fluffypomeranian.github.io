@@ -215,7 +215,11 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.1.1)
+<<<<<<< HEAD
     rake (13.0.1)
+=======
+    rake (13.0.0)
+>>>>>>> 55c9ef5bb79561b79497659c26509665c7682e09
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
