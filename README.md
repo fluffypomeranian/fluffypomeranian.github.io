@@ -10,9 +10,6 @@ Build the site with the following command
 
 ```
 # cd /Users/tim.siwula/dev/fluffypomeranian.github.io
-bundle install
-bundle update
-
 
 # start docker desktop
 // chmod 777 build.sh
@@ -21,9 +18,11 @@ open http://0.0.0.0:4000/
 
 ```
 
-# rvm stuff
+# debug
 gem install bundler
 gem update --system
+bundle install
+bundle update
 \curl -sSL https://get.rvm.io | bash -s stable
 source /Users/tim.siwula/.rvm/scripts/rvm
 rvm install 2.6.5

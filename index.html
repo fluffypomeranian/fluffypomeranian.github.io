@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>tim siwula</title>
+  <title>Tim Siwula</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,16 +17,17 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <p>Welcome to www.timsiwula.com! </p>
+  <p> Hello from Tim! It's nice to have you here =) </p>
 
   <ul>
 
-    <li><a href="https://github.com/fluffypomeranian/">My github</a> -- Check out my code.
-    <li><a href="http://m.me/144000482774878">The Comedy Bot</a> -- A facebook messenger chatbot
-    <li><a href="sms://+17203364682">A sms text chatbot (720)-336-4682 </a> -- A sms text chatbot
-    <li><a href="https://www.npmjs.com/package/happychain"> HappyChain npm api module</a> -- An ethereum blockchain developers API.
+    <li><a href="https://github.com/timxor/resume/raw/master/resume-timothy-siwula.pdf">my resume</a>
 
-    <li><a href="https://www.timsiwula.com/resume/">resume</a> -- peek it out
+    <li><a href="https://github.com/timxor/">My github</a>
+    <!-- <li><a href="http://m.me/144000482774878">The Comedy Bot</a> -- A facebook messenger chatbot -->
+    <li><a href="sms://+17203364682">Sparky: send her a text at (720)-336-4682 </a>
+
+    <li><a href="https://www.npmjs.com/package/happychain"> HappyChain: NPM developer API module</a>
 
 </ul>
 
@@ -41,112 +42,6 @@
   </script>
 
 
-<script src="build/three.js"></script>
-<script src="js/renderers/Projector.js"></script>
-<script src="js/renderers/CanvasRenderer.js"></script>
-<script src="js/libs/stats.min.js"></script>
-
-
-<script>
-    var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
-    var container, stats;
-    var camera, scene, renderer;
-    var particles, particle, count = 0;
-    var mouseX = 0, mouseY = 0;
-    var windowHalfX = window.innerWidth / 2;
-    var windowHalfY = window.innerHeight / 2;
-    init();
-    animate();
-    function init() {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 2, 10000);
-        camera.position.z = 1000;
-        scene = new THREE.Scene();
-        particles = new Array();
-        var PI2 = Math.PI * 2;
-        var material = new THREE.SpriteCanvasMaterial({
-            program: function (context) {
-                context.beginPath();
-                context.arc(0, 0, 0.5, 0, PI2, true);
-                context.fill();
-            }
-        });
-        var i = 0;
-        for (var ix = 0; ix < AMOUNTX; ix++) {
-            for (var iy = 0; iy < AMOUNTY; iy++) {
-                particle = particles[i++] = new THREE.Sprite(material);
-                particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
-                // The default x to z 3D depth perception is ----> [iy * SEPARATION]
-                // x to x 2D perception is ----> [iy -10 * SEPARATION]
-                // x to x 3d perception is ----> [iy -10 * SEPARATION]
-                particle.position.z =
-                    iy * SEPARATION -
-                    ( ( AMOUNTY * SEPARATION ) / 2 );
-                scene.add(particle);
-            }
-        }
-        renderer = new THREE.CanvasRenderer();
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-        document.addEventListener('mousemove', onDocumentMouseMove, true);
-        document.addEventListener('touchstart', onDocumentTouchStart, true);
-        document.addEventListener('touchmove', onDocumentTouchMove, true);
-        window.addEventListener('resize', onWindowResize, false);
-    }
-    function onWindowResize() {
-        windowHalfX = window.innerWidth / 2;
-        windowHalfY = window.innerHeight / 2;
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    }
-    function onDocumentMouseMove(event) {
-        mouseX = event.clientX - windowHalfX;
-        mouseY = event.clientY - windowHalfY;
-    }
-    function onDocumentTouchStart(event) {
-        if (event.touches.length === 1) {
-            event.preventDefault();
-            mouseX = event.touches[0].pageX - windowHalfX;
-            mouseY = event.touches[0].pageY - windowHalfY;
-        }
-    }
-    function onDocumentTouchMove(event) {
-        if (event.touches.length === 1) {
-            event.preventDefault();
-            mouseX = event.touches[0].pageX - windowHalfX;
-            mouseY = event.touches[0].pageY - windowHalfY;
-        }
-    }
-    function animate() {
-        requestAnimationFrame(animate);
-        render();
-    }
-    function render() {
-        camera.position.x = ( mouseX - camera.position.x ) * .05;
-        camera.position.y = ( -mouseY - camera.position.y ) * .05;
-        camera.lookAt(scene.position);
-        var i = 0;
-        for (var ix = 0; ix < AMOUNTX; ix++) {
-            for (var iy = 0; iy < AMOUNTY; iy++) {
-                particle = particles[i++];
-                particle.position.y = (
-                    -Math.sin(
-                        // speed --> slow == ( ix + count ) * 0.1 )
-                        // speed --> fast == ( ix + count ) * 0.5 )
-                        ( ix + count ) * 0.01) * 50 ) +
-                    (-Math.sin(
-                        ( iy + count ) * 0.1) * 50 );
-                particle.scale.x = particle.scale.y = ( Math.sin(( ix + count ) * 0.3) + 1 ) * 4 +
-                    ( Math.sin(( iy + count ) * 0.5) + 1 ) * 4;
-            }
-        }
-        renderer.render(scene, camera);
-        count += 0.1;
-    }
-</script>
 </body>
 
 </html>
