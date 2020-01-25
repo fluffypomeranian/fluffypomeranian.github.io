@@ -1,15 +1,13 @@
 # Timothy Siwula
 
-This [repository](https://github.com/fluffypomeranian/timsiwula.github.io
-)
-is for my [portfolio](https://www.timsiwula.com) and future blog and future mailing list.
+This [repository](https://github.com/timxor/timsiwula.github.io) is for my [website](https://www.timsiwula.com) and future blog and future mailing list.
 
 
 ## install then start docker server
 Build the site with the following command
 
 ```
-# cd /Users/tim.siwula/dev/fluffypomeranian.github.io
+# cd /Users/tim.siwula/dev/timxor.github.io
 
 # start docker desktop
 // chmod 777 build.sh
